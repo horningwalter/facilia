@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Facilia. Consultoria em Dados e Inteligência Artificial. Analytics, Machine Learning, IA Generativa e Automação, feitos sob medida.">
+    <meta name="keywords" content="consultoria dados, inteligência artificial, machine learning, análise de dados, IA generativa, automação, BI, dashboards">
+    <meta name="author" content="Facilia">
+    <meta property="og:title" content="Facilia. Consultoria em Dados & Inteligência Artificial">
+    <meta property="og:description" content="Consultoria independente em dados e IA. Transformamos dados em decisão.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="imgs/logo_facilia.png">
+    <title>Facilia. Consultoria em Dados & Inteligência Artificial</title>
+    <link rel="icon" type="image/png" href="imgs/logo_facilia.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        (function () {
+            var saved = null;
+            try { saved = localStorage.getItem('facilia-lang'); } catch (e) {}
+            var lang = (saved === 'en') ? 'en' : 'pt';
+            document.documentElement.setAttribute('data-lang', lang);
+            document.documentElement.setAttribute('lang', lang === 'en' ? 'en' : 'pt-BR');
+        })();
+    </script>
+</head>
+<body>
+
+    <!-- GRAIN OVERLAY -->
+    <div class="grain" aria-hidden="true"></div>
+
+    <!-- NAVBAR -->
+    <header class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#home" class="nav-logo" aria-label="Facilia">
+                <img src="imgs/logo_facilia.png" alt="Facilia" class="nav-logo-img">
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="#servicos" class="nav-link">
+                    <span class="nav-num">01</span>
+                    <span class="lang-pt">Serviços</span>
+                    <span class="lang-en">Services</span>
+                </a>
+                <a href="#metodologia" class="nav-link">
+                    <span class="nav-num">02</span>
+                    <span class="lang-pt">Método</span>
+                    <span class="lang-en">Method</span>
+                </a>
+                <a href="#entregas" class="nav-link">
+                    <span class="nav-num">03</span>
+                    <span class="lang-pt">Entregas</span>
+                    <span class="lang-en">Deliverables</span>
+                </a>
+                <a href="#time" class="nav-link">
+                    <span class="nav-num">04</span>
+                    <span class="lang-pt">Time</span>
+                    <span class="lang-en">Team</span>
+                </a>
+                <a href="#contato" class="nav-link nav-link-cta">
+                    <span class="lang-pt">Contato</span>
+                    <span class="lang-en">Contact</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </a>
+            </nav>
+
+            <div class="lang-switch" role="group" aria-label="Idioma / Language">
+                <button class="lang-btn" data-lang="pt" aria-label="Português">PT</button>
+                <span class="lang-sep">|</span>
+                <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+            </div>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+        <div class="hero-grid" aria-hidden="true"></div>
+
+        <div class="hero-inner">
+            <div class="hero-copy">
+                <div class="hero-meta">
+                    <span class="mono-tag">§ 001 / Facilia Consulting</span>
+                </div>
+
+                <h1 class="hero-title lang-pt">
+                    <span class="hero-title-line">Dados que trabalham</span>
+                    <em class="hero-title-em serif-italic">por você.</em>
+                </h1>
+                <h1 class="hero-title lang-en">
+                    <span class="hero-title-line">Data that works</span>
+                    <em class="hero-title-em serif-italic">for you.</em>
+                </h1>
+
+                <p class="hero-lede lang-pt">
+                    Projetos de dados, inteligência artificial e automação, desenhados sob medida para cada empresa. Ponta a ponta, do diagnóstico inicial ao sistema em produção.
+                </p>
+                <p class="hero-lede lang-en">
+                    Tailored projects in data, AI, and automation. End-to-end, from first diagnosis to the system running in production.
+                </p>
+
+                <div class="hero-cta-row">
+                    <a href="#contato" class="btn btn-ink">
+                        <span class="lang-pt">Iniciar conversa</span>
+                        <span class="lang-en">Start a conversation</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="#servicos" class="link-underline">
+                        <span class="lang-pt">ou veja o que fazemos</span>
+                        <span class="lang-en">or see what we do</span>
+                    </a>
+                </div>
+
+                <div class="hero-footmeta">
+                    <div>
+                        <span class="mono-label">est.</span>
+                        <span>2025</span>
+                    </div>
+                    <div>
+                        <span class="mono-label lang-pt">base</span>
+                        <span class="mono-label lang-en">based in</span>
+                        <span class="lang-pt">Curitiba · Brasil</span>
+                        <span class="lang-en">Curitiba · Brazil</span>
+                    </div>
+                    <div>
+                        <span class="mono-label lang-pt">modelo</span>
+                        <span class="mono-label lang-en">model</span>
+                        <span class="lang-pt">remoto / híbrido</span>
+                        <span class="lang-en">remote / hybrid</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual" aria-hidden="true">
+                <svg class="hero-scatter" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet">
+                    <line x1="0" y1="200" x2="400" y2="200" stroke="rgba(15,23,23,0.08)" stroke-width="0.5" stroke-dasharray="2 4"/>
+                    <line x1="200" y1="0" x2="200" y2="400" stroke="rgba(15,23,23,0.08)" stroke-width="0.5" stroke-dasharray="2 4"/>
+                    <circle cx="200" cy="200" r="150" fill="none" stroke="rgba(26,139,130,0.10)" stroke-width="0.8" stroke-dasharray="1 6"/>
+                    <circle cx="200" cy="200" r="100" fill="none" stroke="rgba(26,139,130,0.12)" stroke-width="0.8" stroke-dasharray="1 6"/>
+                    <g class="scatter-points" fill="#1A8B82">
+                        <circle cx="65" cy="120" r="2"/>
+                        <circle cx="98" cy="85" r="1.5"/>
+                        <circle cx="140" cy="60" r="3"/>
+                        <circle cx="175" cy="110" r="2"/>
+                        <circle cx="220" cy="75" r="1.5"/>
+                        <circle cx="260" cy="50" r="2.5"/>
+                        <circle cx="300" cy="85" r="2"/>
+                        <circle cx="340" cy="130" r="1.5"/>
+                        <circle cx="355" cy="175" r="2"/>
+                        <circle cx="75" cy="170" r="1.5"/>
+                        <circle cx="115" cy="155" r="2.5"/>
+                        <circle cx="48" cy="220" r="2"/>
+                        <circle cx="32" cy="260" r="1.5"/>
+                        <circle cx="70" cy="285" r="2"/>
+                        <circle cx="110" cy="315" r="3"/>
+                        <circle cx="150" cy="340" r="2"/>
+                        <circle cx="195" cy="355" r="2.5"/>
+                        <circle cx="245" cy="345" r="2"/>
+                        <circle cx="290" cy="325" r="1.5"/>
+                        <circle cx="330" cy="295" r="2"/>
+                        <circle cx="360" cy="255" r="2.5"/>
+                        <circle cx="375" cy="215" r="1.5"/>
+                        <circle cx="145" cy="260" r="2"/>
+                        <circle cx="260" cy="260" r="2"/>
+                        <circle cx="155" cy="150" r="1.5"/>
+                        <circle cx="255" cy="155" r="1.5"/>
+                    </g>
+                </svg>
+
+                <div class="hero-logo-stage">
+                    <div class="hero-logo-halo"></div>
+                    <div class="hero-logo-disc">
+                        <img src="imgs/logo_facilia.png" alt="" class="hero-logo-img">
+                    </div>
+                </div>
+
+                <span class="corner corner-tl"></span>
+                <span class="corner corner-tr"></span>
+                <span class="corner corner-bl"></span>
+                <span class="corner corner-br"></span>
+
+                <span class="axis-label axis-label-x lang-pt">dimensão x / tempo</span>
+                <span class="axis-label axis-label-x lang-en">x axis / time</span>
+                <span class="axis-label axis-label-y lang-pt">dimensão y / impacto</span>
+                <span class="axis-label axis-label-y lang-en">y axis / impact</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <section class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+            <div class="marquee-row">
+                <span class="marquee-item"><em>Analytics</em></span><span class="marquee-sep">✦</span>
+                <span class="marquee-item"><em>Machine Learning</em></span><span class="marquee-sep">✦</span>
+                <span class="marquee-item lang-pt"><em>IA Generativa</em></span><span class="marquee-item lang-en"><em>Generative AI</em></span><span class="marquee-sep">✦</span>
+                <span class="marquee-item"><em>RAG</em></span><span class="marquee-sep">✦</span>
+                <span class="marquee-item lang-pt"><em>Engenharia de Dados</em></span><span class="marquee-item lang-en"><em>Data Engineering</em></span><span class="marquee-sep">✦</span>
+                <span class="marquee-item"><em>Forecasting</em></span><span class="marquee-sep">✦</span>
+                <span class="marquee-item"><em>Dashboards</em></span><span class="marquee-sep">✦</span>
+                <span class="marquee-item lang-pt"><em>Automação</em></span><span class="marquee-item lang-en"><em>Automation</em></span><span class="marquee-sep">✦</span>
+                <span class="marquee-item"><em>MLOps</em></span><span class="marquee-sep">✦</span>
+                <span class="marquee-item"><em>NLP</em></span><span class="marquee-sep">✦</span>
+            </div>
+            <div class="marquee-row" aria-hidden="true">
+                <span class="marquee-item"><em>Analytics</em></span><span class="marquee-sep">✦</span>
+                <span class="marquee-item"><em>Machine Learning</em></span><span class="marquee-sep">✦</span>
+                <span class="marquee-item lang-pt"><em>IA Generativa</em></span><span class="marquee-item lang-en"><em>Generative AI</em></span><span class="marquee-sep">✦</span>
+                <span class="marquee-item"><em>RAG</em></span><span class="marquee-sep">✦</span>
+                <span class="marquee-item lang-pt"><em>Engenharia de Dados</em></span><span class="marquee-item lang-en"><em>Data Engineering</em></span><span class="marquee-sep">✦</span>
+                <span class="marquee-item"><em>Forecasting</em></span><span class="marquee-sep">✦</span>
+                <span class="marquee-item"><em>Dashboards</em></span><span class="marquee-sep">✦</span>
+                <span class="marquee-item lang-pt"><em>Automação</em></span><span class="marquee-item lang-en"><em>Automation</em></span><span class="marquee-sep">✦</span>
+                <span class="marquee-item"><em>MLOps</em></span><span class="marquee-sep">✦</span>
+                <span class="marquee-item"><em>NLP</em></span><span class="marquee-sep">✦</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- VALUES -->
+    <section class="values">
+        <div class="container">
+            <div class="values-grid">
+                <div class="value reveal">
+                    <span class="value-num mono">01</span>
+                    <h3>
+                        <span class="lang-pt">Foco em impacto</span>
+                        <span class="lang-en">Impact first</span>
+                    </h3>
+                    <p>
+                        <span class="lang-pt">Toda entrega começa com uma pergunta: qual decisão isso vai melhorar?</span>
+                        <span class="lang-en">Every delivery starts with one question: which decision does this make better?</span>
+                    </p>
+                </div>
+                <div class="value reveal">
+                    <span class="value-num mono">02</span>
+                    <h3>
+                        <span class="lang-pt">Ciclos curtos</span>
+                        <span class="lang-en">Short cycles</span>
+                    </h3>
+                    <p>
+                        <span class="lang-pt">Sprints enxutas, entregas incrementais, resultado visível em semanas.</span>
+                        <span class="lang-en">Lean sprints, incremental releases, visible results in weeks.</span>
+                    </p>
+                </div>
+                <div class="value reveal">
+                    <span class="value-num mono">03</span>
+                    <h3>
+                        <span class="lang-pt">Stack moderno</span>
+                        <span class="lang-en">Modern stack</span>
+                    </h3>
+                    <p>
+                        <span class="lang-pt">Python, SQL, cloud, LLMs. A escolha segue o problema, nunca a moda do momento.</span>
+                        <span class="lang-en">Python, SQL, cloud, LLMs. Tool choice follows the problem, never the hype.</span>
+                    </p>
+                </div>
+                <div class="value reveal">
+                    <span class="value-num mono">04</span>
+                    <h3>
+                        <span class="lang-pt">Senioridade real</span>
+                        <span class="lang-en">Real seniority</span>
+                    </h3>
+                    <p>
+                        <span class="lang-pt">Quem conversa com você também coloca a mão na massa. Sem intermediários.</span>
+                        <span class="lang-en">The person you talk to is the person who builds. No middle layer.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos" class="section section-services">
+        <div class="container">
+            <header class="section-header reveal">
+                <div class="section-marker">
+                    <span class="mono-tag lang-pt">§ 001 / Serviços</span>
+                    <span class="mono-tag lang-en">§ 001 / Services</span>
+                </div>
+                <h2 class="section-title lang-pt">
+                    O que <em class="serif-italic">entregamos</em>
+                </h2>
+                <h2 class="section-title lang-en">
+                    What we <em class="serif-italic">deliver</em>
+                </h2>
+                <p class="section-lede lang-pt">
+                    Seis pilares de serviço. Cada projeto combina só o que precisa para resolver o problema. Nem mais, nem menos.
+                </p>
+                <p class="section-lede lang-en">
+                    Six service areas. Each project pulls in only what it needs to solve the problem. Nothing more, nothing less.
+                </p>
+            </header>
+
+            <div class="services-grid">
+                <article class="service reveal">
+                    <div class="service-head">
+                        <span class="mono-num">01</span>
+                        <span class="mono-tag">Analytics</span>
+                    </div>
+                    <h3 class="service-title lang-pt"><em class="serif-italic">Análise</em> de Dados &amp; BI</h3>
+                    <h3 class="service-title lang-en"><em class="serif-italic">Analytics</em> &amp; BI</h3>
+                    <p class="service-body lang-pt">Dashboards executivos, diagnósticos e indicadores que viram decisão. Do desenho do KPI ao painel no ar.</p>
+                    <p class="service-body lang-en">Executive dashboards, diagnostics, and indicators that turn into decisions. From KPI design to a dashboard that ships.</p>
+                    <ul class="service-list lang-pt">
+                        <li>Power BI, Metabase, Looker</li>
+                        <li>Modelagem semântica, data marts</li>
+                        <li>Relatórios automatizados</li>
+                    </ul>
+                    <ul class="service-list lang-en">
+                        <li>Power BI, Metabase, Looker</li>
+                        <li>Semantic modeling, data marts</li>
+                        <li>Automated reporting</li>
+                    </ul>
+                </article>
+
+                <article class="service reveal service-shift">
+                    <div class="service-head">
+                        <span class="mono-num">02</span>
+                        <span class="mono-tag">ML</span>
+                    </div>
+                    <h3 class="service-title lang-pt"><em class="serif-italic">Machine</em> Learning</h3>
+                    <h3 class="service-title lang-en"><em class="serif-italic">Machine</em> Learning</h3>
+                    <p class="service-body lang-pt">Modelos preditivos para previsão de demanda, churn, scoring, classificação e otimização. Sempre com ROI mensurável.</p>
+                    <p class="service-body lang-en">Predictive models for demand forecasting, churn, scoring, classification, and optimization. Always with measurable ROI.</p>
+                    <ul class="service-list lang-pt">
+                        <li>Previsão de demanda e vendas</li>
+                        <li>Classificação, clusterização, scoring</li>
+                        <li>Otimização e recomendação</li>
+                    </ul>
+                    <ul class="service-list lang-en">
+                        <li>Demand and sales forecasting</li>
+                        <li>Classification, clustering, scoring</li>
+                        <li>Optimization and recommendation</li>
+                    </ul>
+                </article>
+
+                <article class="service reveal service-feat">
+                    <div class="service-head">
+                        <span class="mono-num">03</span>
+                        <span class="mono-tag mono-tag-live">
+                            <span class="live-dot"></span>
+                            <span class="lang-pt">em alta</span>
+                            <span class="lang-en">trending</span>
+                        </span>
+                    </div>
+                    <h3 class="service-title lang-pt"><em class="serif-italic">IA Generativa</em> &amp; LLMs</h3>
+                    <h3 class="service-title lang-en"><em class="serif-italic">Generative AI</em> &amp; LLMs</h3>
+                    <p class="service-body lang-pt">Assistentes inteligentes, chatbots com RAG, geração e classificação de conteúdo. Integração com OpenAI, Anthropic e modelos open source.</p>
+                    <p class="service-body lang-en">Smart assistants, RAG chatbots, content generation and classification. Wired up to OpenAI, Anthropic, and open source models.</p>
+                    <ul class="service-list lang-pt">
+                        <li>Chatbots e assistentes corporativos</li>
+                        <li>RAG sobre documentos internos</li>
+                        <li>Extração e classificação de texto</li>
+                    </ul>
+                    <ul class="service-list lang-en">
+                        <li>Corporate chatbots and assistants</li>
+                        <li>RAG over internal documents</li>
+                        <li>Text extraction and classification</li>
+                    </ul>
+                </article>
+
+                <article class="service reveal">
+                    <div class="service-head">
+                        <span class="mono-num">04</span>
+                        <span class="mono-tag">Data Eng.</span>
+                    </div>
+                    <h3 class="service-title lang-pt"><em class="serif-italic">Engenharia</em> de Dados</h3>
+                    <h3 class="service-title lang-en"><em class="serif-italic">Data</em> Engineering</h3>
+                    <p class="service-body lang-pt">Pipelines robustos, ETLs, data lakes e warehouses. Arquitetura escalável em AWS, GCP ou Azure, desenhada em cima do caso de uso real.</p>
+                    <p class="service-body lang-en">Robust pipelines, ETLs, data lakes, and warehouses. Scalable architecture on AWS, GCP, or Azure, shaped around your actual use case.</p>
+                    <ul class="service-list lang-pt">
+                        <li>Airflow, dbt, Spark</li>
+                        <li>Data warehouses modernos</li>
+                        <li>Integrações e APIs</li>
+                    </ul>
+                    <ul class="service-list lang-en">
+                        <li>Airflow, dbt, Spark</li>
+                        <li>Modern data warehouses</li>
+                        <li>APIs and integrations</li>
+                    </ul>
+                </article>
+
+                <article class="service reveal service-shift">
+                    <div class="service-head">
+                        <span class="mono-num">05</span>
+                        <span class="mono-tag">Auto.</span>
+                    </div>
+                    <h3 class="service-title lang-pt"><em class="serif-italic">Automação</em> de Processos</h3>
+                    <h3 class="service-title lang-en"><em class="serif-italic">Process</em> Automation</h3>
+                    <p class="service-body lang-pt">Web scraping, RPA e scripts sob medida que aposentam tarefas repetitivas e devolvem tempo para o time focar no que importa.</p>
+                    <p class="service-body lang-en">Web scraping, RPA, and custom scripts that retire repetitive work and hand your team back the time for what matters.</p>
+                    <ul class="service-list lang-pt">
+                        <li>Scrapers e coleta de dados</li>
+                        <li>Relatórios e e-mails automáticos</li>
+                        <li>Integrações entre sistemas</li>
+                    </ul>
+                    <ul class="service-list lang-en">
+                        <li>Scrapers and data collection</li>
+                        <li>Automated reports and emails</li>
+                        <li>System-to-system integrations</li>
+                    </ul>
+                </article>
+
+                <article class="service reveal">
+                    <div class="service-head">
+                        <span class="mono-num">06</span>
+                        <span class="mono-tag lang-pt">Estratégia</span>
+                        <span class="mono-tag lang-en">Strategy</span>
+                    </div>
+                    <h3 class="service-title lang-pt"><em class="serif-italic">Consultoria</em> Estratégica</h3>
+                    <h3 class="service-title lang-en"><em class="serif-italic">Strategic</em> Consulting</h3>
+                    <p class="service-body lang-pt">Diagnóstico de maturidade de dados, roadmap, treinamento e apoio à decisão técnica. Para empresas que estão no começo dessa jornada.</p>
+                    <p class="service-body lang-en">Data maturity assessment, roadmap, training, and technical decision support. Built for teams early in the journey.</p>
+                    <ul class="service-list lang-pt">
+                        <li>Diagnóstico e roadmap</li>
+                        <li>Treinamentos sob medida</li>
+                        <li>Escolha de ferramentas e stack</li>
+                    </ul>
+                    <ul class="service-list lang-en">
+                        <li>Assessment and roadmap</li>
+                        <li>Custom training</li>
+                        <li>Tooling and stack selection</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- MANIFESTO -->
+    <section class="manifesto">
+        <div class="container">
+            <div class="manifesto-inner reveal">
+                <span class="mono-tag manifesto-tag">§ manifesto</span>
+
+                <blockquote class="manifesto-quote lang-pt">
+                    <p>
+                        <span class="quote-mark">“</span>Dado bom não é dado bonito.
+                        É <em class="serif-italic">dado usado</em>: aquele que vira decisão,
+                        corta desperdício, acerta aposta.<span class="quote-mark">”</span>
+                    </p>
+                </blockquote>
+                <blockquote class="manifesto-quote lang-en">
+                    <p>
+                        <span class="quote-mark">“</span>Good data isn't pretty data.
+                        It's <em class="serif-italic">data in use</em>: the kind that turns into a decision,
+                        cuts waste, lands a bet.<span class="quote-mark">”</span>
+                    </p>
+                </blockquote>
+
+                <footer class="manifesto-attr">
+                    <span class="hairline"></span>
+                    <span class="mono-tag lang-pt">como pensamos na facilia</span>
+                    <span class="mono-tag lang-en">how we think at facilia</span>
+                </footer>
+            </div>
+        </div>
+    </section>
+
+    <!-- METODOLOGIA -->
+    <section id="metodologia" class="section section-method">
+        <div class="container">
+            <header class="section-header reveal">
+                <div class="section-marker">
+                    <span class="mono-tag lang-pt">§ 002 / Método</span>
+                    <span class="mono-tag lang-en">§ 002 / Method</span>
+                </div>
+                <h2 class="section-title lang-pt">
+                    Um processo <em class="serif-italic">simples</em>,<br>
+                    testado em dezenas de projetos
+                </h2>
+                <h2 class="section-title lang-en">
+                    A <em class="serif-italic">simple</em> process,<br>
+                    proven across dozens of projects
+                </h2>
+                <p class="section-lede lang-pt">
+                    Quatro fases claras. Você sempre sabe onde estamos, o que vem a seguir e qual é o próximo valor entregue.
+                </p>
+                <p class="section-lede lang-en">
+                    Four clear phases. You always know where we are, what comes next, and what lands in your hands after it.
+                </p>
+            </header>
+
+            <ol class="method-list">
+                <li class="method reveal">
+                    <div class="method-num"><em class="serif-italic">01</em></div>
+                    <div class="method-content">
+                        <h3>
+                            <span class="lang-pt">Diagnóstico</span>
+                            <span class="lang-en">Discovery</span>
+                        </h3>
+                        <p>
+                            <span class="lang-pt">Uma conversa gratuita para entender o problema, o que já existe em dados e qual resultado de negócio você espera.</span>
+                            <span class="lang-en">A free first call to understand the problem, what data already exists, and the business outcome you are aiming at.</span>
+                        </p>
+                        <span class="mono-label lang-pt">1 a 2 semanas</span>
+                        <span class="mono-label lang-en">1 to 2 weeks</span>
+                    </div>
+                </li>
+                <li class="method reveal">
+                    <div class="method-num"><em class="serif-italic">02</em></div>
+                    <div class="method-content">
+                        <h3>
+                            <span class="lang-pt">Proposta</span>
+                            <span class="lang-en">Proposal</span>
+                        </h3>
+                        <p>
+                            <span class="lang-pt">Escopo detalhado, arquitetura sugerida, cronograma e investimento. Tudo por escrito, sem surpresas.</span>
+                            <span class="lang-en">Detailed scope, proposed architecture, timeline, and investment. All in writing, no surprises.</span>
+                        </p>
+                        <span class="mono-label lang-pt">3 a 5 dias</span>
+                        <span class="mono-label lang-en">3 to 5 days</span>
+                    </div>
+                </li>
+                <li class="method reveal">
+                    <div class="method-num"><em class="serif-italic">03</em></div>
+                    <div class="method-content">
+                        <h3>
+                            <span class="lang-pt">Execução</span>
+                            <span class="lang-en">Execution</span>
+                        </h3>
+                        <p>
+                            <span class="lang-pt">Desenvolvimento iterativo em sprints curtas, com entregas parciais e demos frequentes.</span>
+                            <span class="lang-en">Iterative development in short sprints, with partial releases and frequent demos.</span>
+                        </p>
+                        <span class="mono-label lang-pt">2 a 12 semanas</span>
+                        <span class="mono-label lang-en">2 to 12 weeks</span>
+                    </div>
+                </li>
+                <li class="method reveal">
+                    <div class="method-num"><em class="serif-italic">04</em></div>
+                    <div class="method-content">
+                        <h3>
+                            <span class="lang-pt">Entrega &amp; Suporte</span>
+                            <span class="lang-en">Handover &amp; Support</span>
+                        </h3>
+                        <p>
+                            <span class="lang-pt">Deploy em produção, documentação, transferência de conhecimento e suporte pós-entrega opcional.</span>
+                            <span class="lang-en">Production deploy, documentation, knowledge transfer, and optional post-launch support.</span>
+                        </p>
+                        <span class="mono-label lang-pt">contínuo</span>
+                        <span class="mono-label lang-en">ongoing</span>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- ENTREGAS -->
+    <section id="entregas" class="section section-deliverables">
+        <div class="container">
+            <header class="section-header reveal">
+                <div class="section-marker">
+                    <span class="mono-tag lang-pt">§ 003 / Entregas típicas</span>
+                    <span class="mono-tag lang-en">§ 003 / Typical deliverables</span>
+                </div>
+                <h2 class="section-title lang-pt">
+                    Algumas coisas que <em class="serif-italic">construímos</em> juntos
+                </h2>
+                <h2 class="section-title lang-en">
+                    A few things we can <em class="serif-italic">build</em> together
+                </h2>
+                <p class="section-lede lang-pt">
+                    Tipos de projeto que a Facilia executa. Cada solução é adaptada ao contexto, tamanho e orçamento do cliente.
+                </p>
+                <p class="section-lede lang-en">
+                    Project types we run end to end. Every solution is shaped around the client's context, size, and budget.
+                </p>
+            </header>
+
+            <div class="filter-row reveal">
+                <button class="chip chip-active" data-filter="all">
+                    <span class="lang-pt">Todos</span>
+                    <span class="lang-en">All</span>
+                </button>
+                <button class="chip" data-filter="analytics">Analytics &amp; BI</button>
+                <button class="chip" data-filter="ml">Machine Learning</button>
+                <button class="chip" data-filter="genai">
+                    <span class="lang-pt">IA Generativa</span>
+                    <span class="lang-en">Generative AI</span>
+                </button>
+                <button class="chip" data-filter="eng">
+                    <span class="lang-pt">Eng. de Dados</span>
+                    <span class="lang-en">Data Eng.</span>
+                </button>
+                <button class="chip" data-filter="auto">
+                    <span class="lang-pt">Automação</span>
+                    <span class="lang-en">Automation</span>
+                </button>
+            </div>
+
+            <div class="deliverables-grid">
+                <article class="deliverable reveal" data-category="genai">
+                    <div class="deliverable-top">
+                        <span class="mono-tag lang-pt">IA Generativa</span>
+                        <span class="mono-tag lang-en">Generative AI</span>
+                        <span class="mono-num">001</span>
+                    </div>
+                    <h3 class="lang-pt"><em class="serif-italic">Assistente</em> interno com RAG</h3>
+                    <h3 class="lang-en"><em class="serif-italic">Internal</em> RAG assistant</h3>
+                    <p class="lang-pt">Chatbot que responde perguntas sobre documentos internos (manuais, políticas, contratos) com citação das fontes.</p>
+                    <p class="lang-en">A chatbot that answers questions about internal documents (manuals, policies, contracts) with source citations.</p>
+                    <div class="stack">
+                        <span>LangChain</span><span>OpenAI</span><span>Vector DB</span><span>Python</span>
+                    </div>
+                </article>
+                <article class="deliverable reveal" data-category="analytics">
+                    <div class="deliverable-top">
+                        <span class="mono-tag">Analytics</span>
+                        <span class="mono-num">002</span>
+                    </div>
+                    <h3 class="lang-pt"><em class="serif-italic">Dashboard</em> executivo</h3>
+                    <h3 class="lang-en"><em class="serif-italic">Executive</em> dashboard</h3>
+                    <p class="lang-pt">Painel único, interativo, reunindo indicadores financeiros, comerciais e operacionais em tempo quase real.</p>
+                    <p class="lang-en">A single interactive panel bringing financial, commercial, and operational indicators together in near real time.</p>
+                    <div class="stack">
+                        <span>Power BI</span><span>SQL</span><span>dbt</span>
+                    </div>
+                </article>
+                <article class="deliverable reveal" data-category="ml">
+                    <div class="deliverable-top">
+                        <span class="mono-tag">Machine Learning</span>
+                        <span class="mono-num">003</span>
+                    </div>
+                    <h3 class="lang-pt"><em class="serif-italic">Previsão</em> de demanda</h3>
+                    <h3 class="lang-en"><em class="serif-italic">Demand</em> forecasting</h3>
+                    <p class="lang-pt">Forecasting para planejamento de estoque, compras ou escala de equipe, com atualização automática.</p>
+                    <p class="lang-en">Forecasting for inventory, purchasing, or staffing, updated automatically.</p>
+                    <div class="stack">
+                        <span>Python</span><span>Prophet</span><span>XGBoost</span>
+                    </div>
+                </article>
+                <article class="deliverable reveal" data-category="ml">
+                    <div class="deliverable-top">
+                        <span class="mono-tag">Machine Learning</span>
+                        <span class="mono-num">004</span>
+                    </div>
+                    <h3 class="lang-pt"><em class="serif-italic">Scoring</em> de clientes</h3>
+                    <h3 class="lang-en"><em class="serif-italic">Customer</em> scoring</h3>
+                    <p class="lang-pt">Modelo que identifica clientes com maior propensão a churn, conversão ou inadimplência, e propõe a próxima ação para cada caso.</p>
+                    <p class="lang-en">A model that flags customers most likely to churn, convert, or default, and proposes the next move for each one.</p>
+                    <div class="stack">
+                        <span>Scikit-learn</span><span>LightGBM</span><span>SHAP</span>
+                    </div>
+                </article>
+                <article class="deliverable reveal" data-category="genai">
+                    <div class="deliverable-top">
+                        <span class="mono-tag lang-pt">IA Generativa</span>
+                        <span class="mono-tag lang-en">Generative AI</span>
+                        <span class="mono-num">005</span>
+                    </div>
+                    <h3 class="lang-pt"><em class="serif-italic">Extração</em> de documentos</h3>
+                    <h3 class="lang-en"><em class="serif-italic">Document</em> extraction</h3>
+                    <p class="lang-pt">Leitura automatizada de contratos, notas fiscais ou currículos, com validação humana no loop.</p>
+                    <p class="lang-en">Automated reading of contracts, invoices, or CVs, with a human in the loop for validation.</p>
+                    <div class="stack">
+                        <span>LLMs</span><span>OCR</span><span>Pydantic</span>
+                    </div>
+                </article>
+                <article class="deliverable reveal" data-category="eng">
+                    <div class="deliverable-top">
+                        <span class="mono-tag">Data Eng.</span>
+                        <span class="mono-num">006</span>
+                    </div>
+                    <h3 class="lang-pt"><em class="serif-italic">Pipeline</em> corporativo</h3>
+                    <h3 class="lang-en"><em class="serif-italic">Corporate</em> pipeline</h3>
+                    <p class="lang-pt">Integração de múltiplas fontes (ERP, CRM, planilhas, APIs) em um data warehouse unificado, com qualidade monitorada.</p>
+                    <p class="lang-en">Multiple sources (ERP, CRM, spreadsheets, APIs) brought into a single warehouse, with data quality under watch.</p>
+                    <div class="stack">
+                        <span>Airflow</span><span>dbt</span><span>BigQuery</span>
+                    </div>
+                </article>
+                <article class="deliverable reveal" data-category="auto">
+                    <div class="deliverable-top">
+                        <span class="mono-tag lang-pt">Automação</span>
+                        <span class="mono-tag lang-en">Automation</span>
+                        <span class="mono-num">007</span>
+                    </div>
+                    <h3 class="lang-pt"><em class="serif-italic">Monitoramento</em> de concorrência</h3>
+                    <h3 class="lang-en"><em class="serif-italic">Competitive</em> monitoring</h3>
+                    <p class="lang-pt">Scrapers que acompanham preços, estoques ou notícias de mercado e alimentam dashboards com alertas automáticos.</p>
+                    <p class="lang-en">Scrapers that track prices, stock levels, or market news and feed dashboards with automatic alerts.</p>
+                    <div class="stack">
+                        <span>Python</span><span>Playwright</span><span>Scrapy</span>
+                    </div>
+                </article>
+                <article class="deliverable reveal" data-category="auto">
+                    <div class="deliverable-top">
+                        <span class="mono-tag lang-pt">Automação</span>
+                        <span class="mono-tag lang-en">Automation</span>
+                        <span class="mono-num">008</span>
+                    </div>
+                    <h3 class="lang-pt"><em class="serif-italic">Relatórios</em> automatizados</h3>
+                    <h3 class="lang-en"><em class="serif-italic">Automated</em> reports</h3>
+                    <p class="lang-pt">Geração e envio programado de relatórios em PDF, Excel ou e-mail. Fim do trabalho manual recorrente.</p>
+                    <p class="lang-en">Scheduled generation and delivery of reports in PDF, Excel, or email. The end of recurring manual work.</p>
+                    <div class="stack">
+                        <span>Python</span><span>Jinja</span><span>Pandas</span>
+                    </div>
+                </article>
+                <article class="deliverable reveal" data-category="analytics">
+                    <div class="deliverable-top">
+                        <span class="mono-tag">Analytics</span>
+                        <span class="mono-num">009</span>
+                    </div>
+                    <h3 class="lang-pt"><em class="serif-italic">Diagnóstico</em> de maturidade</h3>
+                    <h3 class="lang-en"><em class="serif-italic">Maturity</em> assessment</h3>
+                    <p class="lang-pt">Avaliação estruturada da maturidade de dados da empresa, com um roadmap de evolução priorizado.</p>
+                    <p class="lang-en">A structured review of the company's data maturity, with a prioritized evolution roadmap.</p>
+                    <div class="stack">
+                        <span class="lang-pt">Consultoria</span>
+                        <span class="lang-en">Consulting</span>
+                        <span>Workshops</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIME -->
+    <section id="time" class="section section-team">
+        <div class="container">
+            <header class="section-header reveal">
+                <div class="section-marker">
+                    <span class="mono-tag lang-pt">§ 004 / Time</span>
+                    <span class="mono-tag lang-en">§ 004 / Team</span>
+                </div>
+                <h2 class="section-title lang-pt">
+                    Quem está <em class="serif-italic">por trás</em> da Facilia
+                </h2>
+                <h2 class="section-title lang-en">
+                    Who's <em class="serif-italic">behind</em> Facilia
+                </h2>
+                <p class="section-lede lang-pt">
+                    Na Facilia, quem conversa com você é quem executa o projeto. Senioridade real em cada reunião, sem intermediários.
+                </p>
+                <p class="section-lede lang-en">
+                    At Facilia, the person you talk to is the person who builds. Real seniority in every meeting, no middle layer.
+                </p>
+            </header>
+
+            <div class="team-layout">
+                <article class="profile reveal">
+                    <div class="profile-left">
+                        <div class="profile-mark">
+                            <img src="imgs/wjhj.png" alt="Walter José Horning Junior" class="profile-photo">
+                        </div>
+                        <div class="profile-caption mono">
+                            <span>fig. 01</span>
+                            <span class="hairline hairline-v"></span>
+                            <span class="lang-pt">fundador</span>
+                            <span class="lang-en">founder</span>
+                        </div>
+                    </div>
+
+                    <div class="profile-body">
+                        <div class="profile-tag mono-tag lang-pt">fundador · consultor principal</div>
+                        <div class="profile-tag mono-tag lang-en">founder · principal consultant</div>
+                        <h3 class="profile-name">
+                            Walter José <em class="serif-italic">Horning</em> Junior
+                        </h3>
+
+                        <div class="profile-bio lang-pt">
+                            <p>
+                                Cientista de Dados sênior com mais de <strong>15 anos em TI</strong> e <strong>8 anos focados em Dados, Machine Learning e IA</strong>. Formado em Ciência da Computação pela UFPR e autor do livro <em class="serif-italic">Python para Análise de Dados: Do Zero ao Insight</em> (2024).
+                            </p>
+                            <p>
+                                Atuou como <em class="serif-italic">Senior</em> e <em class="serif-italic">Principal Data Scientist</em> em empresas como ALLOS, Prudential, Swap, Delivery Center e Olist, entregando projetos em e-commerce, logística, fintech, seguros, varejo, banking, saúde e consultoria.
+                            </p>
+                            <p>
+                                Entre as entregas recentes: pipelines de dados <strong>6.000×</strong> mais rápidos, um assistente RAG que reduziu tickets de suporte em <strong>40%</strong>, modelo de scoring que cortou <strong>18%</strong> de churn e otimização de rotas com <strong>13%</strong> de economia operacional.
+                            </p>
+                            <p class="profile-bio-creed">
+                                Mede cada entrega pelo valor de negócio que gera, não só pela acurácia técnica.
+                            </p>
+                        </div>
+                        <div class="profile-bio lang-en">
+                            <p>
+                                Senior Data Scientist with <strong>15+ years in IT</strong> and <strong>8 years focused on Data, Machine Learning, and AI</strong>. B.Sc. in Computer Science from UFPR and author of <em class="serif-italic">Python para Análise de Dados: Do Zero ao Insight</em> (2024, in Portuguese).
+                            </p>
+                            <p>
+                                Held <em class="serif-italic">Senior</em> and <em class="serif-italic">Principal Data Scientist</em> roles at companies including ALLOS, Prudential, Swap, Delivery Center, and Olist, shipping projects across e-commerce, logistics, fintech, insurance, retail, banking, healthcare, and consulting.
+                            </p>
+                            <p>
+                                Recent highlights: data pipelines made <strong>6,000×</strong> faster, a RAG assistant that cut support tickets by <strong>40%</strong>, a scoring model that reduced churn by <strong>18%</strong>, and route optimization delivering <strong>13%</strong> in operational savings.
+                            </p>
+                            <p class="profile-bio-creed">
+                                Measures every delivery by the business value it generates, not just technical accuracy.
+                            </p>
+                        </div>
+
+                        <dl class="profile-specs">
+                            <div>
+                                <dt class="mono-label lang-pt">formação</dt>
+                                <dt class="mono-label lang-en">education</dt>
+                                <dd class="lang-pt">Ciência da Computação, UFPR</dd>
+                                <dd class="lang-en">Computer Science, UFPR</dd>
+                            </div>
+                            <div>
+                                <dt class="mono-label lang-pt">publicação</dt>
+                                <dt class="mono-label lang-en">publication</dt>
+                                <dd class="lang-pt">Python para Análise de Dados <span class="mono">(2024)</span></dd>
+                                <dd class="lang-en">Python for Data Analysis <span class="mono">(2024, PT)</span></dd>
+                            </div>
+                            <div>
+                                <dt class="mono-label lang-pt">especialidades</dt>
+                                <dt class="mono-label lang-en">focus areas</dt>
+                                <dd>Analytics · Data Science · ML · LLMs · GenAI · MLOps · Data Eng. · Automation</dd>
+                            </div>
+                        </dl>
+
+                        <div class="profile-links">
+                            <a href="https://horningwalter.github.io/my_site/" target="_blank" rel="noopener" class="link-underline">
+                                <span class="lang-pt">Site pessoal</span>
+                                <span class="lang-en">Personal site</span>
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/walter-horning-junior/" target="_blank" rel="noopener" class="link-underline">
+                                <span>LinkedIn</span>
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <aside class="profile-placeholder reveal">
+                    <span class="mono-tag lang-pt">§ 005 · vaga futura</span>
+                    <span class="mono-tag lang-en">§ 005 · future seat</span>
+                    <h3 class="lang-pt">Seu lugar <em class="serif-italic">aqui</em>, em breve.</h3>
+                    <h3 class="lang-en">Your spot <em class="serif-italic">here</em>, soon.</h3>
+                    <p class="lang-pt">A Facilia cresce junto com os projetos. Estamos de olho em novos talentos em Dados, IA e Engenharia.</p>
+                    <p class="lang-en">Facilia grows with the projects. We keep an eye out for new talent in Data, AI, and Engineering.</p>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-inner reveal">
+                <div class="cta-meta">
+                    <span class="mono-tag mono-tag-inverse lang-pt">§ começar</span>
+                    <span class="mono-tag mono-tag-inverse lang-en">§ start</span>
+                </div>
+                <h2 class="cta-title lang-pt">
+                    Tem um projeto <em class="serif-italic">em mente</em>?
+                </h2>
+                <h2 class="cta-title lang-en">
+                    Got a project <em class="serif-italic">in mind</em>?
+                </h2>
+                <p class="cta-lede lang-pt">
+                    A conversa inicial é sempre gratuita. Em 30 minutos entendemos seu desafio e dizemos, com honestidade, se podemos ajudar.
+                </p>
+                <p class="cta-lede lang-en">
+                    The first call is always free. In 30 minutes we understand the challenge and tell you, honestly, whether we can help.
+                </p>
+                <a href="#contato" class="btn btn-cream">
+                    <span class="lang-pt">Agendar conversa</span>
+                    <span class="lang-en">Book a call</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="section section-contact">
+        <div class="container">
+            <header class="section-header reveal">
+                <div class="section-marker">
+                    <span class="mono-tag lang-pt">§ 006 / Contato</span>
+                    <span class="mono-tag lang-en">§ 006 / Contact</span>
+                </div>
+                <h2 class="section-title lang-pt">
+                    Vamos <em class="serif-italic">conversar</em>.
+                </h2>
+                <h2 class="section-title lang-en">
+                    Let's <em class="serif-italic">talk</em>.
+                </h2>
+                <p class="section-lede lang-pt">
+                    Conta um pouco sobre seu projeto ou desafio. Respondemos em até um dia útil.
+                </p>
+                <p class="section-lede lang-en">
+                    Tell us about your project or challenge. We answer within one business day.
+                </p>
+            </header>
+
+            <ul class="contact-list">
+                <li class="contact-row reveal">
+                    <a href="mailto:faciliacontato@gmail.com" class="contact-link">
+                        <span class="contact-num mono">01</span>
+                        <span class="contact-method mono-tag lang-pt">E-mail</span>
+                        <span class="contact-method mono-tag lang-en">Email</span>
+                        <span class="contact-value">faciliacontato<em class="serif-italic">@</em>gmail.com</span>
+                        <span class="contact-arrow">→</span>
+                    </a>
+                </li>
+                <li class="contact-row reveal">
+                    <a href="https://wa.me/554198497081?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Facilia%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener" class="contact-link">
+                        <span class="contact-num mono">02</span>
+                        <span class="contact-method mono-tag">WhatsApp</span>
+                        <span class="contact-value">+55 <em class="serif-italic">(41)</em> 99849-7081</span>
+                        <span class="contact-arrow">→</span>
+                    </a>
+                </li>
+                <li class="contact-row reveal">
+                    <a href="https://www.linkedin.com/in/walter-horning-junior/" target="_blank" rel="noopener" class="contact-link">
+                        <span class="contact-num mono">03</span>
+                        <span class="contact-method mono-tag">LinkedIn</span>
+                        <span class="contact-value">walter-horning<em class="serif-italic">-</em>junior</span>
+                        <span class="contact-arrow">→</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="footer-mark">
+                <div class="footer-logo-card">
+                    <img src="imgs/logo_facilia.png" alt="Facilia" class="footer-logo">
+                </div>
+                <p class="footer-tagline lang-pt">
+                    Consultoria em <em class="serif-italic">Dados</em> &amp; <em class="serif-italic">Inteligência Artificial</em>.
+                    Transformamos dados em decisão.
+                </p>
+                <p class="footer-tagline lang-en">
+                    A consultancy in <em class="serif-italic">Data</em> &amp; <em class="serif-italic">Artificial Intelligence</em>.
+                    We turn data into decisions.
+                </p>
+            </div>
+
+            <div class="footer-cols">
+                <div class="footer-col">
+                    <span class="mono-label lang-pt">navegação</span>
+                    <span class="mono-label lang-en">navigation</span>
+                    <a href="#servicos"><span class="lang-pt">Serviços</span><span class="lang-en">Services</span></a>
+                    <a href="#metodologia"><span class="lang-pt">Método</span><span class="lang-en">Method</span></a>
+                    <a href="#entregas"><span class="lang-pt">Entregas</span><span class="lang-en">Deliverables</span></a>
+                    <a href="#time"><span class="lang-pt">Time</span><span class="lang-en">Team</span></a>
+                </div>
+                <div class="footer-col">
+                    <span class="mono-label lang-pt">contato</span>
+                    <span class="mono-label lang-en">contact</span>
+                    <a href="mailto:faciliacontato@gmail.com">faciliacontato@gmail.com</a>
+                    <a href="https://wa.me/554198497081" target="_blank" rel="noopener">WhatsApp</a>
+                    <a href="https://www.linkedin.com/in/walter-horning-junior/" target="_blank" rel="noopener">LinkedIn</a>
+                </div>
+                <div class="footer-col">
+                    <span class="mono-label lang-pt">base</span>
+                    <span class="mono-label lang-en">based in</span>
+                    <span class="lang-pt">Curitiba, Brasil</span>
+                    <span class="lang-en">Curitiba, Brazil</span>
+                    <span class="lang-pt">remoto / híbrido</span>
+                    <span class="lang-en">remote / hybrid</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-inner mono">
+                <span class="lang-pt">© <span id="year"></span> Facilia · Consultoria em Dados &amp; IA</span>
+                <span class="lang-en">© <span id="year-en"></span> Facilia · Data &amp; AI Consultancy</span>
+                <span class="footer-bottom-mid">CNPJ 63.460.975/0001-12</span>
+                <span class="lang-pt">todos os direitos reservados · est. 2025 · CWB · BR</span>
+                <span class="lang-en">all rights reserved · est. 2025 · CWB · BR</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
