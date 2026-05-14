@@ -1236,9 +1236,6 @@ html[data-lang="en"] .lang-btn[data-lang="en"]::after {
 .section-team { background: var(--cream-raised); }
 
 .team-layout {
-    display: grid;
-    grid-template-columns: 2.2fr 1fr;
-    gap: 32px;
     max-width: 1100px;
     margin: 0 auto;
 }
@@ -1414,33 +1411,6 @@ html[data-lang="en"] .lang-btn[data-lang="en"]::after {
     display: flex;
     flex-wrap: wrap;
     gap: 28px;
-}
-
-.profile-placeholder {
-    padding: 48px 36px;
-    background: transparent;
-    border: 1px dashed var(--line-strong);
-    border-radius: 4px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 16px;
-}
-
-.profile-placeholder h3 {
-    font-family: var(--serif);
-    font-weight: 300;
-    font-size: 28px;
-    line-height: 1.15;
-    letter-spacing: -0.02em;
-}
-
-.profile-placeholder h3 em.serif-italic { color: var(--teal-deep); }
-
-.profile-placeholder p {
-    font-size: 14px;
-    color: var(--ink-muted);
-    line-height: 1.55;
 }
 
 /* =============== CTA =============== */
@@ -1717,8 +1687,6 @@ html[data-lang="en"] .lang-btn[data-lang="en"]::after {
 
 /* =============== RESPONSIVO =============== */
 @media (max-width: 1100px) {
-    .team-layout { grid-template-columns: 1fr; }
-
     .profile {
         grid-template-columns: 1fr;
         gap: 28px;
