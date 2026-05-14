@@ -11,8 +11,8 @@
 
     --ink:          #111918;
     --ink-soft:     #2A3634;
-    --ink-muted:    #6E7876;
-    --ink-faint:    #A8AFAC;
+    --ink-muted:    #555F5D;
+    --ink-faint:    #8A918F;
 
     --teal:         #1A8B82;
     --teal-deep:    #0E4D48;
@@ -573,14 +573,19 @@ html[data-lang="en"] .lang-btn[data-lang="en"]::after {
     aspect-ratio: 1 / 1;
     max-width: 520px;
     margin: 0 auto;
-    padding: 36px;
+    /* sem padding: a moldura dos .corner define a area util; tudo se alinha por ela */
+    padding: 0;
 }
 
+/* Caixa util alinhada com os .corner (que ficam em 18px de cada lado) */
 .hero-scatter {
     position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
+    top: 18px;
+    right: 18px;
+    bottom: 18px;
+    left: 18px;
+    width: auto;
+    height: auto;
     z-index: 0;
 }
 
@@ -602,9 +607,13 @@ html[data-lang="en"] .lang-btn[data-lang="en"]::after {
 
 .hero-logo-stage {
     position: absolute;
+    /* centralizado dentro do .hero-visual; como os .corner usam 18px iguais
+       em cima/baixo/esquerda/direita, isso coincide com o centro da moldura */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    /* 68% do hero-visual (sem padding) = ~354px com max 520px,
+       preenche bem o quadrado dos corners deixando respiro */
     width: 68%;
     aspect-ratio: 1 / 1;
     z-index: 2;
@@ -677,10 +686,11 @@ html[data-lang="en"] .lang-btn[data-lang="en"]::after {
 .corner::before { width: 12px; height: 1px; top: 0; left: 0; }
 .corner::after  { width: 1px;  height: 12px; top: 0; left: 0; }
 
-.corner-tl { top: 18px;    left: 18px; }
+.corner-tl { top: 18px;    left: 18px;  }
 .corner-tr { top: 18px;    right: 18px; transform: scaleX(-1); }
 .corner-bl { bottom: 18px; left: 18px;  transform: scaleY(-1); }
 .corner-br { bottom: 18px; right: 18px; transform: scale(-1, -1); }
+.corner-tl, .corner-tr, .corner-bl, .corner-br { z-index: 3; }
 
 .axis-label {
     position: absolute;
@@ -693,16 +703,23 @@ html[data-lang="en"] .lang-btn[data-lang="en"]::after {
 }
 
 .axis-label-x {
-    bottom: 8px;
+    /* logo abaixo da moldura inferior dos .corner */
+    bottom: -16px;
     left: 50%;
     transform: translateX(-50%);
+    background: var(--cream);
+    padding: 0 8px;
 }
 
 .axis-label-y {
+    /* logo a esquerda da moldura esquerda dos .corner */
     top: 50%;
-    left: -6px;
-    transform: translateY(-50%) rotate(-90deg);
+    left: -2px;
+    transform: translate(-50%, -50%) rotate(-90deg);
     transform-origin: center;
+    background: var(--cream);
+    padding: 0 8px;
+    white-space: nowrap;
 }
 
 /* =============== MARQUEE =============== */

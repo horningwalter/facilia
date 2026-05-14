@@ -21,6 +21,7 @@
             const open = navMenu.classList.toggle('open');
             navToggle.classList.toggle('active', open);
             navToggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Menu');
+            navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
             document.body.style.overflow = open ? 'hidden' : '';
         });
 
@@ -28,6 +29,7 @@
             link.addEventListener('click', () => {
                 navMenu.classList.remove('open');
                 navToggle.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', 'false');
                 document.body.style.overflow = '';
             });
         });
@@ -43,16 +45,30 @@
             document.documentElement.setAttribute('data-lang', lang);
             document.documentElement.setAttribute('lang', lang === 'en' ? 'en' : 'pt-BR');
             document.title = TITLES[lang];
+            langBtns.forEach((b) => {
+                b.setAttribute('aria-pressed', b.dataset.lang === lang ? 'true' : 'false');
+            });
             try { localStorage.setItem('facilia-lang', lang); } catch (e) {}
+            // Refletir na URL: /?lang=en para EN, / para PT
+            try {
+                const url = new URL(location.href);
+                if (lang === 'en') url.searchParams.set('lang', 'en');
+                else url.searchParams.delete('lang');
+                const newPath = url.pathname + (url.search ? url.search : '') + url.hash;
+                history.replaceState(null, '', newPath);
+            } catch (e) {}
         };
 
         langBtns.forEach((btn) => {
             btn.addEventListener('click', () => setLang(btn.dataset.lang));
         });
 
-        // Sync title with initial lang (set by inline script in <head>)
+        // Sync title and aria with initial lang (set by inline script in <head>)
         const initialLang = document.documentElement.getAttribute('data-lang') || 'pt';
         document.title = TITLES[initialLang];
+        langBtns.forEach((b) => {
+            b.setAttribute('aria-pressed', b.dataset.lang === initialLang ? 'true' : 'false');
+        });
 
         /* ===== Reveal on scroll ===== */
         const revealEls = document.querySelectorAll('.reveal');
@@ -86,8 +102,12 @@
         chips.forEach((chip) => {
             chip.addEventListener('click', function () {
                 const filter = this.dataset.filter;
-                chips.forEach((c) => c.classList.remove('chip-active'));
+                chips.forEach((c) => {
+                    c.classList.remove('chip-active');
+                    c.setAttribute('aria-pressed', 'false');
+                });
                 this.classList.add('chip-active');
+                this.setAttribute('aria-pressed', 'true');
 
                 deliverables.forEach((card) => {
                     const match = filter === 'all' || card.dataset.category === filter;

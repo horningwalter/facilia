@@ -1,5 +1,5 @@
+_marketing/
+*.md
 .claude/
 .DS_Store
 node_modules/
-_marketing/originais/
-.vercel/

@@ -6,10 +6,29 @@
     <meta name="description" content="Facilia. Consultoria em Dados e Inteligência Artificial. Analytics, Machine Learning, IA Generativa e Automação, feitos sob medida.">
     <meta name="keywords" content="consultoria dados, inteligência artificial, machine learning, análise de dados, IA generativa, automação, BI, dashboards">
     <meta name="author" content="Facilia">
+    <meta name="theme-color" content="#F3EEE1">
+    <link rel="canonical" href="https://facilia.ia.br/">
+    <link rel="alternate" hreflang="pt-BR" href="https://facilia.ia.br/">
+    <link rel="alternate" hreflang="en" href="https://facilia.ia.br/en">
+    <link rel="alternate" hreflang="x-default" href="https://facilia.ia.br/">
+
     <meta property="og:title" content="Facilia. Consultoria em Dados & Inteligência Artificial">
     <meta property="og:description" content="Consultoria independente em dados e IA. Transformamos dados em decisão.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="imgs/logo_facilia.png">
+    <meta property="og:url" content="https://facilia.ia.br/">
+    <meta property="og:site_name" content="Facilia">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:image" content="https://facilia.ia.br/imgs/og-facilia.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Facilia. Consultoria em Dados e Inteligência Artificial.">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Facilia. Consultoria em Dados & Inteligência Artificial">
+    <meta name="twitter:description" content="Consultoria independente em dados e IA. Transformamos dados em decisão.">
+    <meta name="twitter:image" content="https://facilia.ia.br/imgs/og-facilia.jpg">
+
     <title>Facilia. Consultoria em Dados & Inteligência Artificial</title>
     <link rel="icon" type="image/png" href="imgs/logo_facilia.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,9 +37,18 @@
     <link rel="stylesheet" href="styles.css">
     <script>
         (function () {
-            var saved = null;
-            try { saved = localStorage.getItem('facilia-lang'); } catch (e) {}
-            var lang = (saved === 'en') ? 'en' : 'pt';
+            // Prioridade: querystring > localStorage > default PT
+            var lang = 'pt';
+            try {
+                var qs = new URLSearchParams(location.search).get('lang');
+                if (qs === 'en' || qs === 'pt') {
+                    lang = qs;
+                    try { localStorage.setItem('facilia-lang', lang); } catch (e) {}
+                } else {
+                    var saved = localStorage.getItem('facilia-lang');
+                    if (saved === 'en' || saved === 'pt') lang = saved;
+                }
+            } catch (e) {}
             document.documentElement.setAttribute('data-lang', lang);
             document.documentElement.setAttribute('lang', lang === 'en' ? 'en' : 'pt-BR');
         })();
@@ -35,7 +63,10 @@
     <header class="nav" id="nav">
         <div class="nav-inner">
             <a href="#home" class="nav-logo" aria-label="Facilia">
-                <img src="imgs/logo_facilia.png" alt="Facilia" class="nav-logo-img">
+                <picture>
+                    <source srcset="imgs/logo_facilia.webp" type="image/webp">
+                    <img src="imgs/logo_facilia.png" alt="Facilia" class="nav-logo-img" width="40" height="40" fetchpriority="high" decoding="async">
+                </picture>
             </a>
 
             <nav class="nav-menu" id="navMenu">
@@ -56,7 +87,7 @@
                 </a>
                 <a href="#time" class="nav-link">
                     <span class="nav-num">04</span>
-                    <span class="lang-pt">Time</span>
+                    <span class="lang-pt">Equipe</span>
                     <span class="lang-en">Team</span>
                 </a>
                 <a href="#contato" class="nav-link nav-link-cta">
@@ -67,12 +98,12 @@
             </nav>
 
             <div class="lang-switch" role="group" aria-label="Idioma / Language">
-                <button class="lang-btn" data-lang="pt" aria-label="Português">PT</button>
-                <span class="lang-sep">|</span>
-                <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+                <button class="lang-btn" data-lang="pt" aria-label="Português" aria-pressed="false">PT</button>
+                <span class="lang-sep" aria-hidden="true">|</span>
+                <button class="lang-btn" data-lang="en" aria-label="English" aria-pressed="false">EN</button>
             </div>
 
-            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+            <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="navMenu">
                 <span></span><span></span>
             </button>
         </div>
@@ -106,8 +137,8 @@
 
                 <div class="hero-cta-row">
                     <a href="#contato" class="btn btn-ink">
-                        <span class="lang-pt">Iniciar conversa</span>
-                        <span class="lang-en">Start a conversation</span>
+                        <span class="lang-pt">Falar com a Facilia</span>
+                        <span class="lang-en">Talk to Facilia</span>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
                     </a>
                     <a href="#servicos" class="link-underline">
@@ -126,12 +157,6 @@
                         <span class="mono-label lang-en">based in</span>
                         <span class="lang-pt">Curitiba · Brasil</span>
                         <span class="lang-en">Curitiba · Brazil</span>
-                    </div>
-                    <div>
-                        <span class="mono-label lang-pt">modelo</span>
-                        <span class="mono-label lang-en">model</span>
-                        <span class="lang-pt">remoto / híbrido</span>
-                        <span class="lang-en">remote / hybrid</span>
                     </div>
                 </div>
             </div>
@@ -175,7 +200,10 @@
                 <div class="hero-logo-stage">
                     <div class="hero-logo-halo"></div>
                     <div class="hero-logo-disc">
-                        <img src="imgs/logo_facilia.png" alt="" class="hero-logo-img">
+                        <picture>
+                            <source srcset="imgs/logo_facilia.webp" type="image/webp">
+                            <img src="imgs/logo_facilia.png" alt="" class="hero-logo-img" width="320" height="320" fetchpriority="high" decoding="async">
+                        </picture>
                     </div>
                 </div>
 
@@ -471,11 +499,11 @@
                 </div>
                 <h2 class="section-title lang-pt">
                     Um processo <em class="serif-italic">simples</em>,<br>
-                    testado em dezenas de projetos
+                    forjado em projetos reais
                 </h2>
                 <h2 class="section-title lang-en">
                     A <em class="serif-italic">simple</em> process,<br>
-                    proven across dozens of projects
+                    forged in real-world projects
                 </h2>
                 <p class="section-lede lang-pt">
                     Quatro fases claras. Você sempre sabe onde estamos, o que vem a seguir e qual é o próximo valor entregue.
@@ -572,22 +600,22 @@
                 </p>
             </header>
 
-            <div class="filter-row reveal">
-                <button class="chip chip-active" data-filter="all">
+            <div class="filter-row reveal" role="group" aria-label="Filtrar entregas">
+                <button class="chip chip-active" data-filter="all" aria-pressed="true">
                     <span class="lang-pt">Todos</span>
                     <span class="lang-en">All</span>
                 </button>
-                <button class="chip" data-filter="analytics">Analytics &amp; BI</button>
-                <button class="chip" data-filter="ml">Machine Learning</button>
-                <button class="chip" data-filter="genai">
+                <button class="chip" data-filter="analytics" aria-pressed="false">Analytics &amp; BI</button>
+                <button class="chip" data-filter="ml" aria-pressed="false">Machine Learning</button>
+                <button class="chip" data-filter="genai" aria-pressed="false">
                     <span class="lang-pt">IA Generativa</span>
                     <span class="lang-en">Generative AI</span>
                 </button>
-                <button class="chip" data-filter="eng">
+                <button class="chip" data-filter="eng" aria-pressed="false">
                     <span class="lang-pt">Eng. de Dados</span>
                     <span class="lang-en">Data Eng.</span>
                 </button>
-                <button class="chip" data-filter="auto">
+                <button class="chip" data-filter="auto" aria-pressed="false">
                     <span class="lang-pt">Automação</span>
                     <span class="lang-en">Automation</span>
                 </button>
@@ -726,7 +754,7 @@
         <div class="container">
             <header class="section-header reveal">
                 <div class="section-marker">
-                    <span class="mono-tag lang-pt">§ 004 / Time</span>
+                    <span class="mono-tag lang-pt">§ 004 / Equipe</span>
                     <span class="mono-tag lang-en">§ 004 / Team</span>
                 </div>
                 <h2 class="section-title lang-pt">
@@ -747,7 +775,10 @@
                 <article class="profile reveal">
                     <div class="profile-left">
                         <div class="profile-mark">
-                            <img src="imgs/wjhj.png" alt="Walter José Horning Junior" class="profile-photo">
+                            <picture>
+                                <source srcset="imgs/wjhj.webp" type="image/webp">
+                                <img src="imgs/wjhj.jpg" alt="Walter José Horning Junior" class="profile-photo" width="800" height="800" loading="lazy" decoding="async">
+                            </picture>
                         </div>
                         <div class="profile-caption mono">
                             <span>fig. 01</span>
@@ -828,12 +859,12 @@
                 </article>
 
                 <aside class="profile-placeholder reveal">
-                    <span class="mono-tag lang-pt">§ 005 · vaga futura</span>
-                    <span class="mono-tag lang-en">§ 005 · future seat</span>
-                    <h3 class="lang-pt">Seu lugar <em class="serif-italic">aqui</em>, em breve.</h3>
-                    <h3 class="lang-en">Your spot <em class="serif-italic">here</em>, soon.</h3>
-                    <p class="lang-pt">A Facilia cresce junto com os projetos. Estamos de olho em novos talentos em Dados, IA e Engenharia.</p>
-                    <p class="lang-en">Facilia grows with the projects. We keep an eye out for new talent in Data, AI, and Engineering.</p>
+                    <span class="mono-tag lang-pt">§ 005 · modelo de operação</span>
+                    <span class="mono-tag lang-en">§ 005 · how we operate</span>
+                    <h3 class="lang-pt">Enxuta <em class="serif-italic">por escolha</em>.</h3>
+                    <h3 class="lang-en">Lean <em class="serif-italic">on purpose</em>.</h3>
+                    <p class="lang-pt">A Facilia opera com um time pequeno e sênior. Quando o projeto pede, ampliamos com parceiros de confiança, projeto a projeto.</p>
+                    <p class="lang-en">Facilia runs with a small, senior team. When the project demands it, we bring in trusted partners on a per-project basis.</p>
                 </aside>
             </div>
         </div>
@@ -860,8 +891,8 @@
                     The first call is always free. In 30 minutes we understand the challenge and tell you, honestly, whether we can help.
                 </p>
                 <a href="#contato" class="btn btn-cream">
-                    <span class="lang-pt">Agendar conversa</span>
-                    <span class="lang-en">Book a call</span>
+                    <span class="lang-pt">Começar a conversa</span>
+                    <span class="lang-en">Start the conversation</span>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
                 </a>
             </div>
@@ -925,7 +956,10 @@
         <div class="container footer-inner">
             <div class="footer-mark">
                 <div class="footer-logo-card">
-                    <img src="imgs/logo_facilia.png" alt="Facilia" class="footer-logo">
+                    <picture>
+                        <source srcset="imgs/logo_facilia.webp" type="image/webp">
+                        <img src="imgs/logo_facilia.png" alt="Facilia" class="footer-logo" width="80" height="80" loading="lazy" decoding="async">
+                    </picture>
                 </div>
                 <p class="footer-tagline lang-pt">
                     Consultoria em <em class="serif-italic">Dados</em> &amp; <em class="serif-italic">Inteligência Artificial</em>.
@@ -944,7 +978,7 @@
                     <a href="#servicos"><span class="lang-pt">Serviços</span><span class="lang-en">Services</span></a>
                     <a href="#metodologia"><span class="lang-pt">Método</span><span class="lang-en">Method</span></a>
                     <a href="#entregas"><span class="lang-pt">Entregas</span><span class="lang-en">Deliverables</span></a>
-                    <a href="#time"><span class="lang-pt">Time</span><span class="lang-en">Team</span></a>
+                    <a href="#time"><span class="lang-pt">Equipe</span><span class="lang-en">Team</span></a>
                 </div>
                 <div class="footer-col">
                     <span class="mono-label lang-pt">contato</span>

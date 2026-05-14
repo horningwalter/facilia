@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /_marketing/
+
+Sitemap: https://facilia.ia.br/sitemap.xml
