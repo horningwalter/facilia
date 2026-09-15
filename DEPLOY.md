@@ -8,12 +8,20 @@ Depois do projeto importado na Vercel:
 
 1. Painel do projeto, aba **Analytics**.
 2. Clica **Enable Web Analytics**.
-3. A Vercel injeta o script automaticamente em produção (não precisa editar o HTML).
-4. Dados aparecem em ~30 minutos.
+3. Confere que o script está no `index.html`, antes do `</body>`:
+   ```html
+   <script defer src="/_vercel/insights/script.js"></script>
+   ```
 
-Plano gratuito: até 2.500 eventos/mês, suficiente para começar. Se passar disso, considerar [Plausible](https://plausible.io) ou Umami.
+O wizard da Vercel oferece só opções com build step (`npm i @vercel/analytics` + `inject()`). Esse caminho não serve aqui: o site é HTML estático, sem `package.json` e sem bundler para resolver o import. A tag direta acessa o mesmo endpoint e é o que o pacote acabaria injetando no DOM.
 
-Nada para mudar no código.
+A injeção automática de script só vale para projetos com framework detectado (Next.js e afins). Em site estático, sem a tag no HTML não chega evento nenhum, por mais que o Analytics esteja habilitado no painel.
+
+O caminho `/_vercel/insights/` só existe em deploy na Vercel. Em `localhost` dá 404, é esperado.
+
+Dados aparecem em ~30 segundos depois da primeira visita. Bloqueador de anúncio derruba a coleta: para testar, aba anônima sem extensão.
+
+Plano gratuito: cota mensal de eventos com retenção curta, suficiente para começar. Se passar disso, considerar [Plausible](https://plausible.io) ou Umami.
 
 ## 2. Google Search Console
 
